@@ -1,6 +1,7 @@
 package com.example.bmicalculator
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -17,28 +18,37 @@ class MainActivity : AppCompatActivity() {
             val heightval=height.toInt()
             val weightval=weight.toInt()
             val bmi=(10000*weightval)/(heightval*heightval)
-
+            bmires1.text = "${bmi.toFloat()}"
             when {
                 bmi<16 -> {
-                    bmires1.text = "${bmi.toFloat()}"
-                    bmires2.text = getString(R.string.severlyunderweight)
+                    resultlayout.visibility=View.VISIBLE
+                    bmires1.visibility=View.VISIBLE
+                    bmires2.visibility=View.VISIBLE
+                    bmires2.text ="SEVERLY UNDERWEIGHT"
                 }
                 bmi in 17..18 -> {
-                    bmires1.text = "${bmi.toFloat()}"
+                    resultlayout.visibility=View.VISIBLE
+                    bmires1.visibility=View.VISIBLE
+                    bmires2.visibility=View.VISIBLE
                     bmires2.text = getString(R.string.underweight)
-
                 }
                 bmi in 19 .. 25 -> {
-                    bmires1.text = "${bmi.toFloat()}"
+                    resultlayout.visibility=View.VISIBLE
+                    bmires1.visibility=View.VISIBLE
+                    bmires2.visibility=View.VISIBLE
                     bmires2.text = getString(R.string.normal)
                 }
                 bmi in 25 .. 30 -> {
-                    bmires1.text = "${bmi.toFloat()}"
+                    resultlayout.visibility=View.VISIBLE
+                    bmires1.visibility=View.VISIBLE
+                    bmires2.visibility=View.VISIBLE
                     bmires2.text = getString(R.string.overweight)
 
                 }
                 else -> {
-                    bmires1.text = "${bmi.toFloat()}"
+                    resultlayout.visibility=View.VISIBLE
+                    bmires1.visibility=View.VISIBLE
+                    bmires2.visibility=View.VISIBLE
                     bmires2.text = getString(R.string.obese)
                 }
             }

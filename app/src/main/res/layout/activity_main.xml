@@ -7,101 +7,129 @@
     android:paddingTop="10dp"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="85dp"
-        android:layout_height="46dp"
-        android:paddingTop="10dp"
-        android:text="@string/HEIGHT"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/height"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/height" />
-
-    <EditText
-        android:id="@+id/height"
-        android:layout_width="221dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="112dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/enter_your_height_cm"
-        android:inputType="number"
-        android:textSize="20sp"
+    <LinearLayout
+        android:layout_width="374dp"
+        android:layout_height="414dp"
+        android:background="@drawable/inputlayout"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/resultlayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="85dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="48dp"
-        android:paddingTop="10dp"
-        android:text="@string/weight"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/weight"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.567"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.432">
 
-    <EditText
-        android:id="@+id/weight"
-        android:layout_width="221dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="48dp"
-        android:ems="10"
-        android:hint="@string/enter_your_weight_kg"
-        android:importantForAutofill="no"
-        android:inputType="number"
-        android:textColor="#000000"
-        android:textSize="20sp"
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="282dp"
+            android:layout_height="51dp"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="30dp"
+            android:includeFontPadding="false"
+            android:paddingTop="10dp"
+            android:text="@string/HEIGHT"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/height"
+            android:layout_width="282dp"
+            android:layout_height="51dp"
+            android:layout_marginHorizontal="40dp"
+            android:autofillHints=""
+            android:background="@drawable/resultbackground"
+            android:ems="10"
+            android:hint="@string/enter_your_height_cm"
+            android:inputType="numberDecimal"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="12dp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="282dp"
+            android:layout_height="51dp"
+            android:layout_marginHorizontal="40dp"
+            android:paddingTop="10dp"
+            android:text="@string/weight"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/weight"
+            android:layout_width="282dp"
+            android:layout_height="51dp"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/resultbackground"
+            android:ems="10"
+            android:hint="@string/enter_your_weight_kg"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="12dp"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/calculatebmi"
+            android:layout_width="199dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/button"
+            android:gravity="center|center_horizontal"
+            android:text="@string/calculate_bmi"
+            android:textColor="#fafafa"
+            android:textColorLink="#FFFFFF"
+            android:textSize="19sp"
+            app:cornerRadius="20dp" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/resultlayout"
+        android:layout_width="318dp"
+        android:layout_height="180dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/linearlayout"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/height" />
-
-    <Button
-        android:id="@+id/calculatebmi"
-        android:layout_width="262dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="64dp"
-        android:background="#D700BCD4"
-        android:text="@string/calculate_bmi"
-        android:textSize="19sp"
-        app:layout_constraintEnd_toEndOf="@+id/weight"
-        app:layout_constraintHorizontal_bias="0.658"
-        app:layout_constraintStart_toStartOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/weight" />
-
-    <TextView
-        android:id="@+id/bmires2"
-        android:layout_width="382dp"
-        android:layout_height="63dp"
-        android:layout_marginTop="64dp"
-        android:gravity="center"
-        android:textSize="21sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.553"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bmires1"
-        tools:text="SEVERLY OVERWEIGHT" />
+        tools:visibility="visible">
 
-    <TextView
-        android:id="@+id/bmires1"
-        android:layout_width="122dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="104dp"
-        android:gravity="center"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.536"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calculatebmi"
-        tools:text="12.76" />
+        <TextView
+            android:id="@+id/bmires1"
+            android:layout_width="202dp"
+            android:layout_height="51dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/resultbackground"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="12.76" />
+
+        <TextView
+            android:id="@+id/bmires2"
+            android:layout_width="264dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/resultbackground"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="21sp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bmires1"
+            tools:text="SEVERLY UNDERWEIGHT" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
